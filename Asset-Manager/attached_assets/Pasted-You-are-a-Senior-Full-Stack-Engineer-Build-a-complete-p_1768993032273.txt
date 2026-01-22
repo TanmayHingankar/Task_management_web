@@ -1,0 +1,208 @@
+You are a Senior Full Stack Engineer.
+Build a complete production-ready Task Management Web Application (Full Stack) with clean UI, secure backend, database integration, and perfect CRUD flow.
+========================
+✅ Project Goal
+========================
+Create a Task Management Web App where users can:
+- Create tasks
+- View tasks
+- Update tasks
+- Delete tasks
+The app must be responsive, clean, fast, and bug-free.
+========================
+✅ Tech Stack (Use this exactly)
+========================
+Frontend:
+- React (Vite)
+- React Router
+- Axios
+- Tailwind CSS (clean modern UI)
+Backend:
+- Node.js + Express
+- JWT Authentication (Access + Refresh Token)
+- bcrypt password hashing
+- CORS enabled
+- dotenv for environment variables
+Database:
+- MongoDB (Mongoose)
+========================
+✅ Must Have Features (As per assignment)
+========================
+Frontend:
+1. Responsive UI (Mobile + Desktop)
+2. Add Task form with fields:
+   - Title (required)
+   - Description (optional)
+   - Status (required: "Pending", "In Progress", "Completed")
+3. Display tasks list in:
+   - Cards view (default) AND Table view (toggle)
+4. Each task must have buttons:
+   - Edit
+   - Delete
+5. Basic validations:
+   - Title cannot be empty
+   - Status required
+6. Clean UI design and good UX
+Backend REST APIs:
+- POST /tasks -> create task
+- GET /tasks -> get all tasks (for logged-in user only)
+- PUT /tasks/:id -> update task
+- DELETE /tasks/:id -> delete task
+All tasks must belong to logged-in user.
+Database:
+Store tasks with:
+- id
+- title
+- description
+- status
+- created_at
+========================
+✅ Extra PRO Features (Add these to make it real-world)
+========================
+1. Authentication System (Login/Register)
+   - Register: name, email, password
+   - Login: email, password
+   - Protected routes for tasks
+   - Logout
+2. Search, filter, pagination:
+   - Search tasks by title
+   - Filter by status
+   - Pagination (limit=5 or 10)
+3. Sorting:
+   - newest first / oldest first
+4. Task timestamps:
+   - createdAt and updatedAt
+5. Toast notifications:
+   - Task created / updated / deleted
+   - Login success/failure messages
+6. Confirmation modal before delete
+7. Loading states + error handling everywhere
+8. Empty state UI when no tasks exist
+9. Fully reusable components (clean folder structure)
+========================
+✅ UI / Design Requirements
+========================
+Build a modern clean dashboard:
+- Left Sidebar (optional)
+- Top Navbar with app name + user profile + logout
+- Task list section with:
+  - Search bar
+  - Filter dropdown
+  - Sort dropdown
+  - View toggle (Cards/Table)
+- Add Task button opens a modal form OR inline form
+Use Tailwind with soft shadow cards, rounded corners, and good spacing.
+Make it look like a real product (Internship quality).
+========================
+✅ Backend Requirements (Important)
+========================
+- Use Express Router structure:
+  - routes/authRoutes.js
+  - routes/taskRoutes.js
+- Use controllers:
+  - controllers/authController.js
+  - controllers/taskController.js
+- Use middleware:
+  - authMiddleware.js (JWT protect)
+  - errorMiddleware.js (central error handler)
+- Use Mongoose models:
+  - User model
+  - Task model
+- Use proper status codes:
+  - 200, 201, 400, 401, 403, 404, 500
+- Add validation checks
+- Return consistent JSON format:
+  {
+    success: true/false,
+    message: "...",
+    data: ...
+  }
+========================
+✅ Authentication Tokens (Must Implement)
+========================
+- Access Token: short-lived (15 minutes)
+- Refresh Token: long-lived (7 days)
+Endpoints:
+- POST /auth/register
+- POST /auth/login
+- POST /auth/refresh
+- POST /auth/logout
+Store refresh token securely (in DB OR httpOnly cookie).
+Frontend should store access token in memory/localStorage safely.
+Auto-refresh access token when expired.
+========================
+✅ Frontend Requirements (Important)
+========================
+- Use Axios instance with baseURL
+- Add Axios interceptors:
+  - Attach access token to every request
+  - If 401 token expired, call refresh and retry request automatically
+- Use React Router protected routes
+- Create pages:
+  - /register
+  - /login
+  - /dashboard (tasks)
+- Create reusable UI components:
+  - TaskCard
+  - TaskTable
+  - TaskFormModal
+  - FilterBar
+  - PaginationControls
+  - ConfirmModal
+  - Navbar
+========================
+✅ Deliverables
+========================
+1. Full working code for frontend and backend
+2. Full folder structure
+3. README.md including:
+   - Tech stack
+   - Setup steps (frontend & backend)
+   - Environment variables
+   - API endpoints
+   - Screenshots placeholders
+4. Provide sample .env.example files
+5. Ensure NO errors:
+   - No missing imports
+   - No broken routing
+   - No CORS issues
+   - No DB connection errors
+   - No undefined variables
+========================
+✅ Project Folder Structure (Generate this)
+========================
+task-manager-app/
+  backend/
+    src/
+      config/
+      controllers/
+      middleware/
+      models/
+      routes/
+      utils/
+      server.js
+    package.json
+    .env.example
+  frontend/
+    src/
+      api/
+      components/
+      pages/
+      routes/
+      App.jsx
+      main.jsx
+    package.json
+    .env.example
+========================
+✅ Output Format (Very Important)
+========================
+Give me:
+1) Step-by-step setup commands
+2) Backend complete code (all files)
+3) Frontend complete code (all files)
+4) README.md
+5) Deployment steps (optional) for:
+   - Frontend on Vercel
+   - Backend on Render
+   - MongoDB on MongoDB Atlas
+Build everything now and ensure it runs perfectly. bhai ab tune mujhe project toh diya bana kr ab tera kaam kya hai sun backend or frannnred ke pure folfer ke direct command de mujhe koh daalu toh sb create ho jaye phir step by step mujhe bata mujhe kya cahges krna or konse file jaise ki k=fatabase password ya kuch or joh bhi sb kuch bta bhai
